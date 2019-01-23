@@ -3,7 +3,7 @@ package com.company;
 /**
  * La clase Contador tiene la intención de representar un contador.
  *
- * @author Mauricio Toro, Andres Paez
+ * @author Anthony García, Daniel Hincapie
  * @version 1
  */
 
