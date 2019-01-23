@@ -1,5 +1,3 @@
-package com.company;
-
 /**
  * La clase Punto tiene la intención de representar coordenadas en el espacio y calcular su distancia.
  *
