@@ -1,5 +1,3 @@
-package com.company;
-
 /**
  * La clase Contador tiene la intención de representar un contador.
  *
