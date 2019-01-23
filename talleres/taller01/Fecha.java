@@ -1,5 +1,3 @@
-package com.company;
-
 /**
  * La clase Fecha tiene la intención de representar el tipo abstracto fecha.
  * Aunque ya existen librerías encargadas de esta funcion:
