@@ -1,7 +1,7 @@
 /**
  * La clase Punto tiene la intención de representar coordenadas en el espacio y calcular su distancia.
  *
- * @author Anthony García, Daniel Hincapie
+ * @author Anthony García, Daniel Hincapié
  * @version 1
  */
 import java.lang.Math;
