@@ -1,7 +1,7 @@
 /**
  * La clase Contador tiene la intención de representar un contador.
  *
- * @author Anthony García, Daniel Hincapie
+ * @author Anthony García, Daniel Hincapié
  * @version 1
  */
 
