@@ -1,8 +1,8 @@
 /**
- * La clase Fecha tiene la intención de representar el tipo abstracto fecha.
- * Aunque ya existen librerías encargadas de esta funcion:
- * @see <a href="http://www.baeldung.com/java-8-date-time-intro"> Ver documentacion tipo Time </a>
- * En este ejercicio podemos tener una compresión más profunda de su funcionamiento interno.
+ * The class Fecha represents the abstract datatype fecha.
+ * Even though exist some libraries doing this function.
+ * @see <a href="http://www.baeldung.com/java-8-date-time-intro"> See documentation Time </a>
+ * In this exercise we can have a deeper understanding of its internal functioning.
  *
  * @author Anthony García, Daniel Hincapié
  * @version 1
@@ -12,11 +12,8 @@ public class Fecha {
 
 
     /*
-    varibales con atributo final indican que una variable es de tipo
-    constante, es decir, no admitirá cambios después de su declaración y asignación de valor.
-    final determina que un atributo no puede ser sobreescrito o redefinido.
-    Se le asigna esta característica para evitar que se sobrescriban valores.
-    tener en cuenta tipado de las 3 variables!.
+    varibales with final attribute indicate the variable is 
+    a constant type variable, it means it won't allow make changes on the value.
     */
 
     private final short dia;
@@ -25,7 +22,7 @@ public class Fecha {
 
 
     /**
-     * Se inicializan las variables globales en el constructor de manera que no posean valores nulos o 0s.
+     * Start the global variables. The builder method ca't have any null value or 0s.
      */
     public Fecha(short d,short m,short a) {
         dia=d;
@@ -34,7 +31,7 @@ public class Fecha {
     }
 
     /**
-     * Método para obtener la variable global dia.
+     * This method gets the variable dia..
      *
      * @return el dia
      */
@@ -52,7 +49,7 @@ public class Fecha {
     }
 
     /**
-     * Método para obtener la variable global anio.
+     * This mtehod gets the variable anio.
      *
      * @return el año
      */
@@ -61,14 +58,14 @@ public class Fecha {
     }
 
     /**
-     * @param otra representa la fecha con la culase va a comparar.
+     * @param represents the date it will get compare with.
      *
      * El método comprar se encarga de devolvernos respuesta a tres posibilidades.
-     * 1: si la fecha es menor que la otra retorna -1.
-     * 2: si la fecha es igual que la otra retorna 0.
-     * 3: si la fecha es mayor que la otra retorna 1.
+     * 1: if the date is less than the other one, returns -1.
+     * 2: if the date is  the same , returns 0.
+     * 3: if the date is higher than the other one, returns 1.
      *
-     * @return -1 sí es menor; 0 sí es igual; 1 sí es mayor.
+     * @return -1 if is less; 0 if is the same; 1 if is higher.
      *
      */
 
@@ -102,10 +99,10 @@ public class Fecha {
 
 
     /**
-     * toString se encargará de convertir el tipo abstracto fecha en un tipo cadena
-     * para su posterior visualización
+     * toString will turn the date into a string.
      *
-     * @return una cadena que contiene la fecha
+     *
+     * @return a string which contains the date
      */
     public String toString() {
         return dia+"/"+mes+"/"+anyo;
