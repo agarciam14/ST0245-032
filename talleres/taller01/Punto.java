@@ -1,5 +1,5 @@
 /**
- * La clase Punto tiene la intención de representar coordenadas en el espacio y calcular su distancia.
+ * The class Punto represents coordinates in the space and calcualtes their distance.
  *
  * @author Anthony García, Daniel Hincapié
  * @version 1
@@ -11,7 +11,7 @@ public class Punto {
     private double x, y;
 
     /**
-     * Se inicializan las variables globales en el constructor de manera que no posean valores nulos.
+     * Strat the variables. Global variables can't have any null value or 0s.
      */
     public Punto(double x, double y) {
         this.x =x;
@@ -19,30 +19,30 @@ public class Punto {
     }
 
     /**
-     * Método para obtener la variable global x.
+     * Gets the global variable x. 
      *
-     * @return eje coordenado x
+     * @return coordinate axis x.
      */
     public double x() {
         return x;
     }
 
     /**
-     * Método para obtener la variable global y.
+     * Gets the the global variable y.
      *
-     * @return eje coordenado y
+     * @return coordinate axis x.
      */
     public double y() {
         return y;
     }
 
     /**
-     * Método para obtener el radio polar, en este caso se puede obtener por medio del teorema de pitágoras.
+     * This method gets the polar radio through the Pythagoras theorem.
      *
      *
-     * @return radio polar
+     * @return polar radio 
      *
-     * @see <a href="http://mathworld.wolfram.com/PolarCoordinates.html"> Ver más <a/>
+     * @see <a href="http://mathworld.wolfram.com/PolarCoordinates.html"> see more <a/>
      */
 
     public double radioPolar() {
@@ -51,30 +51,26 @@ public class Punto {
 
 
     /**
-     * Método para obtener el ángulo polar, en este caso se puede obtener por medio de la tangente inversa.
+     * This method gets the polar angle through the reverse tangent.
      *
      *
-     * @return angulo polar
+     * @return polar angle.
      *
-     * @see <a href="http://mathworld.wolfram.com/PolarCoordinates.html"> Ver más <a/>
+     * @see <a href="http://mathworld.wolfram.com/PolarCoordinates.html"> see more <a/>
      */
     public double anguloPolar() {
         return Math.atan(y/x);
     }
 
     /**
-     * Método para obtener la distacia euclidiana. La distacia
-     * euclidiana o euclídea es la distancia "ordinaria" (que se mediría con una regla) entre
-     * dos puntos de un espacio euclídeo, la cual se deduce a partir del teorema de Pitágoras.
-     * En otras palabras es halla el radio polar a la diferencia entre los dos puntos.
+     * Gets the Euclidean distance.
      *
      *
      *
-     * @return distancia euclidiana (radio polar a la diferencia de dos puntos)
+     * @return Euclidean distance
      *
-     * @param otro Este parámetro hace referencia a otro Punto en el espacio con es cual se desea
-     * comparar el Punto desde el cual fue llamado.
-     * @see <a href="http://mathworld.wolfram.com/Distance.html"> Ver más <a/>
+     * @param otro This parameter refers to another Point in the space with which you want to compare the Point from which it was called.
+     * @see <a href="http://mathworld.wolfram.com/Distance.html"> see more <a/>
      */
 
     public double distanciaEuclidiana(Punto otro) {
