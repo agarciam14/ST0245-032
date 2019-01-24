@@ -1,5 +1,5 @@
 /**
- * La clase Contador tiene la intención de representar un contador.
+ * The class Contador represents a counter.
  *
  * @author Anthony García, Daniel Hincapié
  * @version 1
@@ -12,7 +12,7 @@ public class Contador {
 
 
     /**
-     * Se inicializan las variables globales en el constructor de manera que no posean valores nulos o 0s.
+     * Start the global variables. The builder method can't have null values or 0s.
      */
     public Contador(String id) {
         this.id=id;
@@ -20,21 +20,21 @@ public class Contador {
     }
 
     /**
-     * El método incrementar incrementa el contador en una unidad.
+     * The increment method increases the counter by one unit.
      *
-     *(opcional: se podria pasar un parametro "cantidad" para incrementar esa cantidad de unidades).
+     *(optional: you could pass a parameter "quantity" to increase that number of units).
      */
     public void incrementar() {
         cuenta++;
     }
 
     /*
-    Se podría implementar un metodo decrementar para hacer la operacion inversa de incrementar.
+    You could implement a decrease method to do the inverse operation increase method does.
     */
 
     /**
-     * El método incrementos nos muestra en que valor se encuentra la cuenta actualmente.
-     * @return el numero actual de la cuenta
+     * The increase method shows the actual count's value.
+     * @return the actual count's value
      */
     public int incrementos() {
         return cuenta;
@@ -42,11 +42,11 @@ public class Contador {
 
 
     /**
-     * toString se encargará de convertir el contador en un tipo cadena
-     * para su posterior visualización
-     * se debe de mostrar el estado del contador y su id
+     * toString will convert the counter into a string.
+     * for its later visualization.
+     * It must show the counter's status and id.
      *
-     * @return una cadena que contiene el id del contador y su cuenta
+     * @return a string which contains the counter's id an count.
      */
     public String toString() {
         return id+": "+cuenta;
