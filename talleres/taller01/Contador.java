@@ -12,7 +12,7 @@ public class Contador {
 
 
     /**
-     * Start the global variables. The builder method can't have null values or 0s.
+     * Start the global variables. The builder method can't have null values.
      */
     public Contador(String id) {
         this.id=id;
