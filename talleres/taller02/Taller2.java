@@ -5,7 +5,7 @@ package com.company;
  *La clase taller dos tiene como objetivo dar solución
  *a 3 problemas recursivos
  *
- *@autor Mauricio Toro, Camilo Paez
+ *@autor Anthony García, Danuiel Hincapié
  *@version 1
  */
 
