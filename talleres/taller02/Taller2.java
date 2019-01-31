@@ -72,14 +72,17 @@ public class Taller2 {
      */
 
     private static void combinationsAux(String prefix, String s) {
-        if(s.length()==0)
+        if(s.isEmpty())
             System.out.println(prefix);
-        else
+        else 
+            if(s.length()>=2){
             combinationsAux(prefix+s.charAt(0), s.substring(1));
-            if(s.length()==1)
-                combinationsAux(prefix,"");
-            else
-                combinationsAux(prefix,s.substring(1));
+            combinationsAux(prefix,s.substring(1));
+            }
+            else{
+            combinationsAux(prefix+s.charAt(0),"");
+            combinationsAux(prefix,"");
+            }
     }
 
 }
