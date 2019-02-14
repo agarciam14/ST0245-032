@@ -28,7 +28,6 @@ public class Taller4{
             System.out.println(tiempo);
         }
     }
-    // Operaciones que realiza T(n) = cn + c1
     public static int suma(int [] a){
         int acum=0;
         for(int i=0;i<=a.length;i++){
@@ -37,6 +36,7 @@ public class Taller4{
         return acum;
     }
     
+    // Operaciones que realiza T(n) = cn + c1
     private static int arraySum(int[] a,int i){  
         try{
             TimeUnit.SECONDS.sleep(1);
