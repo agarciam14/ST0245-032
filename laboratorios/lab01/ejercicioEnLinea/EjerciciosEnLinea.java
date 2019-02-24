@@ -38,4 +38,67 @@ public class EjercicioEnLinea
         return triangle(rows - 1) + rows;
     }
     // Ejercicios recursion2
+    public boolean splitArray(int[] nums) {
+        int i=0;
+        int sum1=0;
+        int sum2=0;
+        return splitArray(nums, i, sum1, sum2);
+    }
+    private boolean splitArray(int[] nums, int i, int sum1, int sum2){
+        if(i>=nums.length){
+            return sum1==sum2;
+        }
+        return splitArray(nums,i+1,sum1+nums[i],sum2)||splitArray(nums,i+1,sum1,sum2+nums[i]);
+    }
+    public boolean splitOdd10(int[] nums) {
+        int i=0;
+        int sum1=0;
+        int sum2=0;
+        return splitOdd10(nums,i,sum1,sum2);
+    }
+    private boolean splitOdd10(int[] nums, int i, int sum1, int sum2){
+        if(i>=nums.length){
+        return (sum1%10==0&&sum2%2!=0);
+        }
+        return splitOdd10(nums, i+1, sum1+nums[i], sum2)||splitOdd10(nums, i+1, sum1, sum2+nums[i]);
+    }
+    public boolean split53(int[] nums) {
+      int i=0;
+      int sum1=0;
+      int sum2=0;
+      return split53(nums,i,sum1,sum2);
+    }
+    private boolean split53(int[] nums, int i, int sum1, int sum2){
+      if(i>=nums.length){
+        return (sum1==sum2);
+      }
+      int value= nums[i];
+      if (value%5==0){
+        return split53(nums, i+1, sum1+nums[i], sum2);
+      }
+      if (value%3==0){
+        return split53(nums, i+1, sum1, sum2+nums[i]);
+      }
+      return split53(nums, i+1, sum1+nums[i], sum2)||split53(nums, i+1, sum1, sum2+nums[i]);
+    }
+    public boolean groupNoAdj(int start, int[] nums, int target) {
+      if(start>=nums.length){
+        return target==0;
+      }
+      return groupNoAdj(start+2,nums,target-nums[start])||groupNoAdj(start+1,nums,target);
+    }
+    public boolean groupSumClump(int start, int[] nums, int target) {
+      if(start>=nums.length){
+        return target==0;
+      }
+      int rep=1;
+      for(int i=start+1;i<=nums.length-1;i++){
+        if(nums[i]==nums[start]){
+          rep++;
+        }else{
+          break;
+        }
+      }
+      return groupSumClump(start+rep,nums,target)||groupSumClump(start+rep,nums,target-(nums[start]*rep));
+    }
 }
