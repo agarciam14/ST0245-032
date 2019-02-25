@@ -1,3 +1,9 @@
+/**
+* La siguiente clase contiene la solución al punto #2 del
+* Laboratorio #1 del curso de estructura de datos y algoritmos 1
+* @author Anthony García, Daniel Hincapié
+* @version 1.0
+*/
 public class EjercicioEnLinea
 {
     //Ejercicios recursion1
@@ -101,22 +107,20 @@ public class EjercicioEnLinea
       }
       return groupSumClump(start+rep,nums,target)||groupSumClump(start+rep,nums,target-(nums[start]*rep));
     }
-    
-    
     public boolean groupSum5(int start, int[] nums, int target) {
-  if(start < nums.length) {
-    if(start > 0) {
-      if(nums[start - 1] % 5 == 0 && nums[start] == 1) 
-        return groupSum5(start + 1,nums,target);
-    } 
-  if(nums[start] % 5 == 0)
-    return groupSum5(start+1,nums,target-nums[start]);
-  else 
-    return groupSum5(start+1,nums,target) || groupSum5(start+1,nums,target-nums[start]);
-  }
-  
-  if(target == 0) 
-      return true; 
-    return false; 
-  }
+      if(start < nums.length) {
+        if(start > 0) {
+          if(nums[start - 1] % 5 == 0 && nums[start] == 1) 
+            return groupSum5(start + 1,nums,target);
+        } 
+      if(nums[start] % 5 == 0)
+        return groupSum5(start+1,nums,target-nums[start]);
+      else 
+        return groupSum5(start+1,nums,target) || groupSum5(start+1,nums,target-nums[start]);
+      }
+
+      if(target == 0) 
+          return true; 
+        return false; 
+      }
 }
