@@ -115,7 +115,8 @@ public class EjercicioEnLinea
     return groupSum5(start+1,nums,target) || groupSum5(start+1,nums,target-nums[start]);
   }
   
-  if(target == 0) return true; 
+  if(target == 0) 
+      return true; 
     return false; 
   }
 }
