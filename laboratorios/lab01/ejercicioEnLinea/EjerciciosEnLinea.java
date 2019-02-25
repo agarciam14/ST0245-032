@@ -7,18 +7,23 @@
 public class EjercicioEnLinea
 {
     //Ejercicios recursion1
+    
+    //Este método se encarga de retornar el factorial de n de forma recursiva
     public int factorial(int n) {
         if(n == 0) 
         return 1;
 
         return factorial(n-1) * n;
     }
+    
+    //Este método se encarga de sumar los pares de todos los conejos que tengamos, número definido por “bunnies”.
     public int bunnyEars(int bunnies) {
         if(bunnies == 0)
         return 0;
   
         return bunnyEars(bunnies - 1) + 2;
     }
+    //Este método retorna el enésimo número de la secuencia de Fibonnacci
     public int fibonacci(int n) {
         if(n == 0)
         return 0;
@@ -44,6 +49,7 @@ public class EjercicioEnLinea
         return triangle(rows - 1) + rows;
     }
     // Ejercicios recursion2
+    
     public boolean splitArray(int[] nums) {
         int i=0;
         int sum1=0;
@@ -107,6 +113,7 @@ public class EjercicioEnLinea
       }
       return groupSumClump(start+rep,nums,target)||groupSumClump(start+rep,nums,target-(nums[start]*rep));
     }
+    
     public boolean groupSum5(int start, int[] nums, int target) {
       if(start < nums.length) {
         if(start > 0) {
