@@ -27,7 +27,7 @@ public class EjercicioEnLinea
         if(bunnies == 1)
         return 2;
   
-        return (3 - bunnies % 2) + bunnyEars2(bunnies - 1);;
+        return (3 - bunnies % 2) + bunnyEars2(bunnies - 1);
     }
     public int triangle(int rows) {
         if(rows == 0)
