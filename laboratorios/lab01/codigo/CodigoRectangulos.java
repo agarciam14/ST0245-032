@@ -1,7 +1,7 @@
 /**
 * La siguiente clase contiene la solucion al punto #1 del
 * Laboratorio #1 del curso de estructura de datos y algoritmos 1
-* @author Mauricio Toro, Daniel Mesa
+* @author Anthony García, Daniel Hincapié
 * @version 1.0
 */
 public class SPlantilla
