@@ -30,19 +30,22 @@ public class MiArrayList {
     *
     */
     public void add(int e) {
-        if(size==elements.length){
-          int[] a= new int[elements.length+10];
-          for(int i=0; i<elements.length;i++){
-            a[i]=elements[i];
+        if(size==elements.length){ //C1
+          int[] a= new int[elements.length+10]; //C2
+          for(int i=0; i<elements.length;i++){  //C3*n
+            a[i]=elements[i];  //C4*n
           }
-          a[size]=e;
-          elements=a;
-          size++;
+          a[size]=e;//C5
+          elements=a;//C6
+          size++;//C7
         }else{
-          elements[size]=e;
-          size++;
+          elements[size]=e;//C8
+          size++;//C9
         }
-    }    
+    }
+    /* T(n)= C8+C9, si size!=tamaño del arreglo -> O(1)
+       T(n)= C3*n, para el peor de los casos -> O(n)
+    */
     
     
     /** 
