@@ -107,4 +107,3 @@ private int searchAux(int data, Node nodo, int index){
   else
     return searchAux(data,nodo.next,index++);
 }
-}
