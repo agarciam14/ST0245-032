@@ -33,7 +33,7 @@ public LinkedListMauricio(){
          * @throws IndexOutOfBoundsException
 	 */
 	public int get(int index) throws IndexOutOfBoundsException {
-		temp = getNode(index);
+		Node temp = getNode(index);
 		return temp.data;
 	}
 
@@ -44,34 +44,40 @@ public int size(){
 
 // Inserta un dato en la posición index
 public void insert(int data, int index) throws IndexOutOfBoundsException {
-	if(index==0){
-    Node temp=first;
-    Node a= new Node(data);
-    a.next=temp;
-    first=a;
-    size++;
-  }
-  if(index>size){
+	if(index>size){
     throw new IndexOutOfBoundsException();
   }else{
-    Node anterior= getNode(index-1);
-    Node temp= new Node(data);
-    temp.next=anterior.next;
-    anterior.next=temp;
-    size++;
-  }
-    
+    if(index==0){
+      Node temp=first;
+      Node a= new Node(data);
+      a.next=temp;
+      first=a;
+      size++;
+    }else{
+      Node anterior= getNode(index-1);
+      Node temp= new Node(data);
+      temp.next=anterior.next;
+      anterior.next=temp;
+      size++;
+    }
   }
 }
 
+
 // Borra el dato en la posición index
-public void remove(int index){
-   if (index == 0){
-     first = first.next;
+public void remove(int index) throws IndexOutOfBoundsException{
+   if (index>=size){
+     throw new IndexOutOfBoundsException();
    }else{
-	 	Node anterior = getNode(index-1);
-   	anterior.next = anterior.next.next;
-	 }
+    	if (index == 0){
+       first = first.next;
+       size--;
+     }else{
+      Node anterior = getNode(index-1);
+      anterior.next = anterior.next.next;
+      size--;
+     }
+   }
 }
 
 private boolean containsAux(int ElDato, Node nodo){
@@ -101,5 +107,4 @@ private int searchAux(int data, Node nodo, int index){
   else
     return searchAux(data,nodo.next,index++);
 }
-
 }
