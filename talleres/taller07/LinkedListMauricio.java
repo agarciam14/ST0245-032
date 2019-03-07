@@ -38,11 +38,17 @@ public LinkedListMauricio(){
 	}
 
 // Retorna el tamaño actual de la lista
+<<<<<<< HEAD
 public int size(){
+=======
+public int size()
+{
+>>>>>>> cb28804c7ed55e33b129fcde79dab0b28cc97082
 	return size;
 }
 
 // Inserta un dato en la posición index
+<<<<<<< HEAD
 public void insert(int data, int index) throws IndexOutOfBoundsException {
 	if(index==0){
     Node temp=first;
@@ -83,11 +89,33 @@ private boolean containsAux(int ElDato, Node nodo){
         else  // Caso inductivo T(n) = T(n-1) + C = O(n)
           return containsAux(ElDato, nodo.next);
   }
+=======
+public void insert(int data, int index)
+{
+	if(index==0){
+		Node a= first;
+	}
+}
+
+// Borra el dato en la posición index
+public void remove(int index)
+{
+   if (index == 0){
+     first = first.next;
+   }
+   else{
+	 Nodo anterior = get(index-1);
+   	 anterior.next = anterior.next.next;
+   }
+}
+	
+>>>>>>> cb28804c7ed55e33b129fcde79dab0b28cc97082
 // Verifica si está un dato en la lista
 public boolean contains(int data){
    // Si el dato está a partir del primero
 	 return containsAux(data, first); 
 }
+<<<<<<< HEAD
   
 public int search(int data){
   
@@ -105,3 +133,17 @@ public class Node {
     }
         
 }
+=======
+	
+private boolean containsAux(int ElDato, Node nodo){
+     if (nodo == null) // Condicion de parada
+        return false;
+     else
+        if (nodo.data == ElDato) // Otra condicion de parada
+          return true;
+        else  // Caso inductivo T(n) = T(n-1) + C = O(n)
+          return containsAux(ElDato, nodo.next);
+}
+
+}
+>>>>>>> cb28804c7ed55e33b129fcde79dab0b28cc97082
