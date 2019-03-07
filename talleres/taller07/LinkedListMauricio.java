@@ -39,14 +39,10 @@ public LinkedListMauricio(){
 
 // Retorna el tamaño actual de la lista
 public int size(){
-
-public int size()
-{
 	return size;
 }
 
 // Inserta un dato en la posición index
-
 public void insert(int data, int index) throws IndexOutOfBoundsException {
 	if(index==0){
     Node temp=first;
@@ -87,26 +83,6 @@ private boolean containsAux(int ElDato, Node nodo){
         else  // Caso inductivo T(n) = T(n-1) + C = O(n)
           return containsAux(ElDato, nodo.next);
   }
-
-public void insert(int data, int index)
-{
-	if(index==0){
-		Node a= first;
-	}
-}
-
-// Borra el dato en la posición index
-public void remove(int index)
-{
-   if (index == 0){
-     first = first.next;
-   }
-   else{
-	 Nodo anterior = get(index-1);
-   	 anterior.next = anterior.next.next;
-   }
-}
-	
 // Verifica si está un dato en la lista
 public boolean contains(int data){
    // Si el dato está a partir del primero
@@ -114,30 +90,16 @@ public boolean contains(int data){
 }
   
 public int search(int data){
-  
+  return searchAux(data,first,0);
 }
 
-}
-
-public class Node {
-    public int data;
-    public Node next;
-  
-    public Node(int data){
-        next = null;
-        this.data = data;
-    }
-        
-}
-	
-private boolean containsAux(int ElDato, Node nodo){
-     if (nodo == null) // Condicion de parada
-        return false;
-     else
-        if (nodo.data == ElDato) // Otra condicion de parada
-          return true;
-        else  // Caso inductivo T(n) = T(n-1) + C = O(n)
-          return containsAux(ElDato, nodo.next);
+private int searchAux(int data, Node nodo, int index){
+  if(index>=size)
+    return -1;  // Retorna -1 como muestra de que no encontró el dato
+  if(nodo.data==data)
+    return index;
+  else
+    return searchAux(data,nodo.next,index++);
 }
 
 }
