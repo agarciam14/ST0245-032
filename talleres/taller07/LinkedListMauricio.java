@@ -41,7 +41,7 @@ public LinkedListMauricio()
 // Retorna el tamaño actual de la lista
 public int size()
 {
-	...
+	return size;
 }
 
 // Inserta un dato en la posición index
