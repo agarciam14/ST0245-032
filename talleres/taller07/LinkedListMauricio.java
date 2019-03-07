@@ -3,8 +3,7 @@ import java.lang.IndexOutOfBoundsException; // Usar esto cuando se salga el índ
 public class LinkedListMauricio {
 private Node first;
 private int size;
-public LinkedListMauricio()
-{
+public LinkedListMauricio(){
 	size = 0;
 	first = null;	
 }
@@ -39,27 +38,70 @@ public LinkedListMauricio()
 	}
 
 // Retorna el tamaño actual de la lista
-public int size()
-{
-	...
+public int size(){
+	return size;
 }
 
 // Inserta un dato en la posición index
-public void insert(int data, int index)
-{
-	...
+public void insert(int data, int index) throws IndexOutOfBoundsException {
+	if(index==0){
+    Node temp=first;
+    Node a= new Node(data);
+    a.next=temp;
+    first=a;
+    size++;
+  }
+  if(index>size){
+    throw new IndexOutOfBoundsException();
+  }else{
+    Node anterior= getNode(index-1);
+    Node temp= new Node(data);
+    temp.next=anterior.next;
+    anterior.next=temp;
+    size++;
+  }
+    
+  }
 }
 
 // Borra el dato en la posición index
-public void remove(int index)
-{
-	...
+public void remove(int index){
+   if (index == 0){
+     first = first.next;
+   }else{
+	 	Node anterior = getNode(index-1);
+   	anterior.next = anterior.next.next;
+	 }
 }
 
+private boolean containsAux(int ElDato, Node nodo){
+     if (nodo == null) // Condicion de parada
+        return false;
+     else
+        if (nodo.data == ElDato) // Otra condicion de parada
+          return true;
+        else  // Caso inductivo T(n) = T(n-1) + C = O(n)
+          return containsAux(ElDato, nodo.next);
+  }
 // Verifica si está un dato en la lista
-public boolean contains(int data)
-{
-	...
+public boolean contains(int data){
+   // Si el dato está a partir del primero
+	 return containsAux(data, first); 
+}
+  
+public int search(int data){
+  
 }
 
+}
+
+public class Node {
+    public int data;
+    public Node next;
+  
+    public Node(int data){
+        next = null;
+        this.data = data;
+    }
+        
 }
