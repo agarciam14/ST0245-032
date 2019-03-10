@@ -11,6 +11,9 @@ public class ejercicioEnLinea
         }
         return cont;
     }
+    
+    
+    
     public int bigDiff(int[] nums) {
         int vm = nums[0];
         int vM = 0;
@@ -29,6 +32,10 @@ public class ejercicioEnLinea
   
         return vM - vm;
     }
+    
+    
+    
+    
     public int centeredAverage(int[] nums) {
         int may = nums[0];
         int men = nums[0];
@@ -45,6 +52,9 @@ public class ejercicioEnLinea
   
         return (sum - (may + men)) / (nums.length -2);
     }
+    
+    
+    
     public int sum13(int[] nums) {
         int cont = 0;
   
@@ -57,6 +67,10 @@ public class ejercicioEnLinea
         }
         return cont;
     }
+    
+    
+    
+    
     public int sum67(int[] nums) {
         int cont = 0;
   
@@ -75,16 +89,17 @@ public class ejercicioEnLinea
     
     //Ejercicios Array 3
     public int maxSpan(int[] nums) {
-        if(nums.length == 0)
-        return 0;
-        if(nums.length == 1)
-        return 1;
+     if(nums.length < 2)
+        return nums.length;
   
-        if(nums[nums.length - 1] == nums[0])
+     if(nums[nums.length - 1] == nums[0])
         return nums.length;
     
-        return nums.length - 1;
-    }
+     return nums.length - 1;
+     }
+    
+    
+    
     public int[] fix34(int[] nums) {
         for(int i = 0; i < nums.length; i++) {
             if(nums[i] == 3) {
@@ -98,6 +113,9 @@ public class ejercicioEnLinea
         }
         return nums;
     }
+    
+    
+    
     public int[] fix45(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 4) {
@@ -118,6 +136,9 @@ public class ejercicioEnLinea
         }
         return nums;
     }
+    
+    
+    
     public boolean canBalance(int[] nums) {
         int sum = 0;
   
