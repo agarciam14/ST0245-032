@@ -104,7 +104,7 @@ public class Laboratory1
   }
   public static void main(String[] args) throws InterruptedException
   {
-      for (int j=5;j<225;j=j+20)
+      for (int j=5;j<225;j=j+10)
       { 
 	      int[]X=ran(j);
 	      long inicio= System.currentTimeMillis();
