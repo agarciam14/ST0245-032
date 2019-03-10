@@ -117,3 +117,5 @@ public class Laboratory1
 	      System.out.println("Tamaño del arreglo: "+ j +" Tiempo Insertion: "+(fin-inicio)); 
 	      System.out.println(Laboratory1.ArraySum(X) + " " + Laboratory1.ArrayMax(X) + "\n" );      
       }
+  }
+}
