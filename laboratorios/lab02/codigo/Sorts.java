@@ -1,3 +1,4 @@
+
 /**
  * Laboratorio 1 de Estructuras de Datos 1
  * 
@@ -29,14 +30,16 @@ public class Laboratory1
   }
   
   // Sorts an array using Insertion Sort
-  public static void InsertionSort(int[] A)
+  public static void InsertionSort(int[] A) throws InterruptedException
   {
        int temp,j;
        for (int i = 0; i < A.length; i++)
        {
+	 TimeUnit.MILLISECONDS.sleep(1);
          j = i;
          while (j > 0 && A[j-1] > A[j])
            {
+	       TimeUnit.MILLISECONDS.sleep(1);
                temp = A[j];
                A[j] = A[j-1];
                A[j-1] = temp;
@@ -48,17 +51,18 @@ public class Laboratory1
 
       // Sorts an array using Merge Sort
       // Taken from www.cs.cmu.edu/
-	public static void mergeSort(int [ ] a)
+	public static void mergeSort(int [ ] a) throws InterruptedException
 	{
 		int[] tmp = new int[a.length];
 		mergeSort(a, tmp,  0,  a.length - 1);
 	}
 
 
-	private static void mergeSort(int [ ] a, int [ ] tmp, int left, int right)
+	private static void mergeSort(int [ ] a, int [ ] tmp, int left, int right) throws InterruptedException
 	{
 		if( left < right )
 		{
+			TimeUnit.MILLISECONDS.sleep(1);
 			int center = (left + right) / 2;
 			mergeSort(a, tmp, left, center);
 			mergeSort(a, tmp, center + 1, right);
@@ -67,12 +71,13 @@ public class Laboratory1
 	}
 
 
-    private static void merge(int[ ] a, int[ ] tmp, int left, int right, int rightEnd )
+    private static void merge(int[ ] a, int[ ] tmp, int left, int right, int rightEnd ) throws InterruptedException
     {
         int leftEnd = right - 1;
         int k = left;
         int num = rightEnd - left + 1;
 
+	TimeUnit.MILLISECONDS.sleep(1);
         while(left <= leftEnd && right <= rightEnd)
             if(a[left] <= a[right] )
                 tmp[k++] = a[left++];
@@ -90,27 +95,25 @@ public class Laboratory1
             a[rightEnd] = tmp[rightEnd];
     }
   
-  public static void main(String[] args)
-  {
-      int[] A = {1,5,3,2,6};
-      int[] B = {1,5,3,2};
-      int[] C = {1,5,2,6};
-      int[][] Arrays = {A,B,C};  
-      for (int[] X : Arrays)
-      {        
-      int inicio=System.currentTimeMillis();	
-      Laboratory1.mergeSort(X);
-	int t= (System.currentTimeMillis()-inicio)*1000;
-	System.out.println("MergeSort: "+ t);
-	inicio=System.currentTimeMillis();
-      Laboratory1.InsertionSort(X);
-	t= (System.currentTimeMillis()-inicio)*1000;
-	System.out.println("InserionSort: "+ t);
-	inicio=System.currentTimeMillis();
-      System.out.println(Laboratory1.ArraySum(X) + " " + Laboratory1.ArrayMax(X) + "\n" );
-	t= (System.currentTimeMillis()-inicio)*1000;
-	System.out.println("ArraySum: "+ t);
-      }
+  public static int[] ran(int n){
+  	int []array=new int[n];
+	for(int i=0;i<n;i++){
+		array[i]=(int)(Math.random()*100);
+	}
+	return array;
   }
-  
-}
+  public static void main(String[] args) throws InterruptedException
+  {
+      for (int j=5;j<225;j=j+20)
+      { 
+	      int[]X=ran(j);
+	      long inicio= System.currentTimeMillis();
+	      Laboratory1.mergeSort(X);
+	      long fin= Syestem.currentTimeMillis();
+	      System.out.println("Tamaño del arreglo: "+ j +" Tiempo Merge: "+(fin-inicio)); 
+	      inicio= System.currentTimeMillis();
+	      Laboratory1.InsertionSort(X);
+	      fin= Syestem.currentTimeMillis();
+	      System.out.println("Tamaño del arreglo: "+ j +" Tiempo Insertion: "+(fin-inicio)); 
+	      System.out.println(Laboratory1.ArraySum(X) + " " + Laboratory1.ArrayMax(X) + "\n" );      
+      }
