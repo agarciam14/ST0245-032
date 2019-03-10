@@ -100,15 +100,15 @@ public class Laboratory1
       {        
       int inicio=System.currentTimeMillis();	
       Laboratory1.mergeSort(X);
-	int t= System.currentTimeMillis()-inicio;
+	int t= (System.currentTimeMillis()-inicio)*1000;
 	System.out.println("MergeSort: "+ t);
 	inicio=System.currentTimeMillis();
       Laboratory1.InsertionSort(X);
-	t= System.currentTimeMillis()-inicio;
+	t= (System.currentTimeMillis()-inicio)*1000;
 	System.out.println("InserionSort: "+ t);
 	inicio=System.currentTimeMillis();
       System.out.println(Laboratory1.ArraySum(X) + " " + Laboratory1.ArrayMax(X) + "\n" );
-	t= System.currentTimeMillis()-inicio;
+	t= (System.currentTimeMillis()-inicio)*1000;
 	System.out.println("ArraySum: "+ t);
       }
   }
