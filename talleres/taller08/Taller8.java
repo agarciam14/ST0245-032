@@ -36,9 +36,12 @@ public class Taller8 {
     */
     public static void cola (Queue<String> solicitudes, Stack<String> neveras ){
         for(int i=0;solicitudes.peek()!=null;++i){
-          try{
-            System.out.println(i+1+") Tienda: "+solicitudes.poll()+" Nevera: "+neveras.pop())
-          }
+            try{
+                String x=neveras.pop();
+                System.out.println(i+1+") Tienda: "+solicitudes.poll()+" Nevera: "+x);
+            }catch(EmptyStackException e){
+                System.out.println(i+1+") Tienda: "+solicitudes.poll()+" Neveras agotadas");
+            }
         }
     }
     
