@@ -70,7 +70,92 @@ public class Laboratory3 {
         }
     }
   
-  public static void cola (Queue<String> solicitudes, Stack<String> neveras ){
+  
+  
+  
+  
+  public class LinkedListMauricio {
+private Node first;
+private int size;
+public LinkedListMauricio(){
+	size = 0;
+	first = null;	
+}
+
+	private Node getNode(int index) throws IndexOutOfBoundsException {
+		if (index >= 0 && index < size) {
+			Node temp = first;
+			for (int i = 0; i < index; i++) {
+				temp = temp.next;
+			}
+			return temp;
+		} else {
+			throw new IndexOutOfBoundsException();
+		}
+	}
+
+	public int get(int index) throws IndexOutOfBoundsException {
+		Node temp = getNode(index);
+		return temp.data;
+	}
+    
+public int size(){
+	return size;
+}
+    
+public void insert(int data, int index) throws IndexOutOfBoundsException {
+	if(index>size){
+    throw new IndexOutOfBoundsException();
+  }else{
+    if(index==0){
+      Node temp=first;
+      Node a= new Node(data);
+      a.next=temp;
+      first=a;
+      size++;
+    }else{
+      Node anterior= getNode(index-1);
+      Node temp= new Node(data);
+      temp.next=anterior.next;
+      anterior.next=temp;
+      size++;
+    }
+  }
+}
+
+public void remove(int index) throws IndexOutOfBoundsException{
+   if (index>=size){
+     throw new IndexOutOfBoundsException();
+   }else{
+    	if (index == 0){
+       first = first.next;
+       size--;
+     }else{
+      Node anterior = getNode(index-1);
+      anterior.next = anterior.next.next;
+      size--;
+     }
+   }
+}
+
+private boolean containsAux(int ElDato, Node nodo){
+     if (nodo == null) 
+        return false;
+     else
+        if (nodo.data == ElDato) 
+          return true;
+        else  
+          return containsAux(ElDato, nodo.next);
+  }
+public boolean contains(int data){
+   
+	 return containsAux(data, first); 
+}
+  
+    
+    
+    
+  public static void neveras (Queue<String> solicitudes, Stack<String> neveras ){
         for(int i=0;solicitudes.peek()!=null;++i){
             try{
                 String x=neveras.pop();
