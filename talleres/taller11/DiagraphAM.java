@@ -15,7 +15,7 @@ public class DigraphAM extends Digraph {
 	*/
 	public DigraphAM(int size) {
 		super(size);
-	  matriz = new int[size][size]
+	  	matriz = new int[size][size]
 	}
 
 	/**
@@ -26,7 +26,7 @@ public class DigraphAM extends Digraph {
 	* @param weight el peso de la longitud entre source y destination
 	*/
 	public void addArc(int source, int destination, int weight) {   
-     matriz[source][destination] = weight;
+     		matriz[source][destination] = weight;
 	}
 
 	/**
@@ -39,11 +39,13 @@ public class DigraphAM extends Digraph {
 	*/
 	public ArrayList<Integer> getSuccessors(int vertex) {
 		 //VUELOS DIRECTOS DESDE UN AEROPUERTO
-     ArrayList<Integer> respuesta = new ArrayList();
-     for(int j = 0; j < matriz.length; j++)
-       if (matriz[vertex][j] != 0)
-          respuesta.add(j);
-     return respuesta;
+	     ArrayList<Integer> respuesta = new ArrayList();
+	     for(int j = 0; j < matriz.length; j++){
+	       if (matriz[vertex][j] != 0){
+		  respuesta.add(j);
+	       }
+	     }
+	     return respuesta;
 	}
 
 	/**
@@ -54,7 +56,7 @@ public class DigraphAM extends Digraph {
 	* @return un entero con dicho peso
 	*/	
 	public int getWeight(int source, int destination) {
-		   return matriz[source][destination];
+	   return matriz[source][destination];
 	}
 
 }
