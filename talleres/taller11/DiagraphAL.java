@@ -16,8 +16,9 @@ public class DigraphAL extends Digraph {
 	public DigraphAL(int size) {
 		super(size);
 		grafoConListas = new ArrayList<LinkedList<Pair<Integer,Integer>>>();
-    for(int i = 1; i <= size; i++)
-      grafoConListas.add(new LinkedList<Pair<Integer,Integer>() );
+		for(int i = 1; i <= size; i++){
+			grafoConListas.add(new LinkedList<Pair<Integer,Integer>() );
+		}
 	}
 
 	/**
@@ -40,12 +41,12 @@ public class DigraphAL extends Digraph {
  	* @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"> Ver documentacion ArrayList </a>
 	*/
 	public ArrayList<Integer> getSuccessors(int vertex) {
-		VUELOS DIRECTOS DESDE UN AEROPUERTO
-      LinkedList<Pair<Integer,Integer>> temp=grafoConListas.get(vertex);
-    	ArrayList<Integer> res=new ArrayList<Integer>;
-    	for(int i=0;i<temp.size();i++){
-        res.add(temp.get(i).getKey());
-      }
+		//VUELOS DIRECTOS DESDE UN AEROPUERTO
+      		LinkedList<Pair<Integer,Integer>> temp=grafoConListas.get(vertex);
+		ArrayList<Integer> res=new ArrayList<Integer>;
+		for(int i=0;i<temp.size();i++){
+			res.add(temp.get(i).getKey());
+		}
 	}
 
 	/**
@@ -57,13 +58,12 @@ public class DigraphAL extends Digraph {
 	*/	
 	public int getWeight(int source, int destination) {
 		LinkedList<Pair<Integer,Integer>> temp=grafoConListas.get(source);
-    int res=0;
-    for(int i=0;i<temp.size();i++){
-      if(temp.get(i).getKey()==destination){
-        res=temp.get(i).getValue();
-      }
-    }
-    return res;
+	    	int res=0;
+	    	for(int i=0;i<temp.size();i++){
+			if(temp.get(i).getKey()==destination){
+				res=temp.get(i).getValue();
+			}
+		}
+	    	return res;
 	}
-
 }
