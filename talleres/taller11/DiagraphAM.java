@@ -15,7 +15,7 @@ public class DigraphAM extends Digraph {
 	*/
 	public DigraphAM(int size) {
 		super(size);
-	  	matriz = new int[size][size]
+	  	matriz = new int[size][size];
 	}
 
 	/**
